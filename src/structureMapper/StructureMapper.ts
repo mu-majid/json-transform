@@ -1,4 +1,3 @@
-// import { IAppExtension, IArchApp } from '@nodearch/core';
 import {
   INode,
   IPushCondition,

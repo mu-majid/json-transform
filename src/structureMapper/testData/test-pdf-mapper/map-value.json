@@ -1,9 +1,9 @@
 {
   "source": {
     "client": {
-      "name":"NodeArch",
+      "name":"cName",
       "version": "v1",
-      "team": "sharpone"
+      "team": "cName2"
     }
   },
 
@@ -48,10 +48,10 @@
     {
       "data": {
         "name": true,
-        "name2": ["NodeArch", "v1"],
-        "name3": "sharpone",
-        "name4": ["NodeArch", " - ", "sharpone"],
-        "name5": "NodeArch - sharpone",
+        "name2": ["cName", "v1"],
+        "name3": "cName2",
+        "name4": ["cName", " - ", "cName2"],
+        "name5": "cName - cName2",
         "name6": "v1",
         "name7": { "one": 1 },
         "name8": { "two": 2 },

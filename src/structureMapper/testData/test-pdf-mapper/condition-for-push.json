@@ -1,9 +1,9 @@
 {
   "source": {
     "client": {
-      "name": "NodeArch",
+      "name": "clientname",
       "version": 1,
-      "address": { "street": "trufla" }
+      "address": { "street": "hello" }
     },
     "claims":[
       {
@@ -96,8 +96,8 @@
     {
      "key": "filesKey",
      "data": {
-      "clientname": "NodeArch",
-      "street": "trufla",
+      "clientname": "clientname",
+      "street": "hello",
       "allClaimsAndMotors": {
        "code1": 1,
        "code2": 2,
@@ -119,8 +119,8 @@
     {
      "key": "filesKey",
      "data": {
-      "clientname": "NodeArch",
-      "street": "trufla",
+      "clientname": "clientname",
+      "street": "hello",
       "allClaimsAndMotors": {
        "code1": 3,
        "code2": 4,
@@ -141,8 +141,8 @@
     {
      "key": "filesKey",
      "data": {
-      "clientname": "NodeArch",
-      "street": "trufla",
+      "clientname": "clientname",
+      "street": "hello",
       "allClaimsAndMotors": {
        "code1": 1,
        "code2": 2,
@@ -163,8 +163,8 @@
     {
      "key": "filesKey",
      "data": {
-      "clientname": "NodeArch",
-      "street": "trufla",
+      "clientname": "clientname",
+      "street": "hello",
       "allClaimsAndMotors": {
        "code1": 3,
        "code2": 4,

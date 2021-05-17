@@ -1,8 +1,8 @@
 {
   "source": {
     "client": {
-      "name": "sharpone",
-      "framework": "nodearch"
+      "name": "cName",
+      "framework": "framework"
     }
   },
 
@@ -16,7 +16,7 @@
 
   "output": [
     {
-      "name": ["sharpone", ["sharpone", "nodearch"]]
+      "name": ["cName", ["cName", "framework"]]
     }
   ]
 }

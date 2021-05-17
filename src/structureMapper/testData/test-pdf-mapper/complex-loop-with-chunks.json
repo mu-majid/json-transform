@@ -1,6 +1,6 @@
 {
   "source": {
-    "clientName": "nodearch",
+    "clientName": "clientname",
     "quoteId": "77",
     "cars": [
       {
@@ -147,7 +147,7 @@
 
   "output": [
     {
-      "name": "nodearch",
+      "name": "clientname",
       "qId": "77",
       "vehicles": {
         "id1": "1",
@@ -185,7 +185,7 @@
       }
     },
     {
-      "name": "nodearch",
+      "name": "clientname",
       "qId": "77",
       "vehicles": {
         "id1": "13",

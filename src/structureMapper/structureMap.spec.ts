@@ -17,17 +17,17 @@ import multiSchema from './testData/test-pdf-mapper/multi-schema.json';
 
 
 
-import objToObj from './testData/sharp-mapper-functionality/object-to-object.json';
-import objToNestedArr from './testData/sharp-mapper-functionality/obj-to-nested-arr.json';
-import objToArr from './testData/sharp-mapper-functionality/obj-to-array.json';
-import nestedArrToNormArr from './testData/sharp-mapper-functionality/nested-arr-to-normalized-arr.json';
-import arrInArrToArrInArr from './testData/sharp-mapper-functionality/arr-within-arr-to-arr-within-arr.json';
-import nestedObjWithNullArr from './testData/sharp-mapper-functionality/array-is-null-obj.json';
-import nestedObjWithArrs from './testData/sharp-mapper-functionality/arr-in-nested-obj-to-arr.json';
-import arrToArr from './testData/sharp-mapper-functionality/array-to-array-mapping.json';
-import arrToPrimitive from './testData/sharp-mapper-functionality/arr-of-obj-to-arr-of-primitives.json';
-import arrWithinArrParent from './testData/sharp-mapper-functionality/arr-within-arr-parent-access.json';
-import arrWithinArrParentChunks from './testData/sharp-mapper-functionality/complex-arr-with-in-arr-parent-access.json';
+import objToObj from './testData/arr-obj-functionality/object-to-object.json';
+import objToNestedArr from './testData/arr-obj-functionality/obj-to-nested-arr.json';
+import objToArr from './testData/arr-obj-functionality/obj-to-array.json';
+import nestedArrToNormArr from './testData/arr-obj-functionality/nested-arr-to-normalized-arr.json';
+import arrInArrToArrInArr from './testData/arr-obj-functionality/arr-within-arr-to-arr-within-arr.json';
+import nestedObjWithNullArr from './testData/arr-obj-functionality/array-is-null-obj.json';
+import nestedObjWithArrs from './testData/arr-obj-functionality/arr-in-nested-obj-to-arr.json';
+import arrToArr from './testData/arr-obj-functionality/array-to-array-mapping.json';
+import arrToPrimitive from './testData/arr-obj-functionality/arr-of-obj-to-arr-of-primitives.json';
+import arrWithinArrParent from './testData/arr-obj-functionality/arr-within-arr-parent-access.json';
+import arrWithinArrParentChunks from './testData/arr-obj-functionality/complex-arr-with-in-arr-parent-access.json';
 
 
 

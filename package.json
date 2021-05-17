@@ -1,7 +1,7 @@
 {
-  "name": "@nodearch/mapper",
+  "name": "JSON Transform",
   "version": "0.0.1",
-  "description": "nodearch module for mapping json",
+  "description": "module for mapping json",
   "main": "./dist/index.js",
   "scripts": {
     "test": "mocha",
@@ -9,20 +9,9 @@
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
     "release": "npm run build && npm publish --access public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nodearch/mapper.git"
-  },
-  "keywords": [
-    "nodearch",
-    "nodearch-mapper"
-  ],
   "author": "https://github.com/AhmedAli7O1",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/nodearch/mapper/issues",
-    "email": "bluemax7o1@gmail.com"
-  },
+
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.4",
