@@ -1,0 +1,33 @@
+{
+  "source": {
+    "data": {
+      "phones": [
+        {
+          "number": "+151564986",
+          "holder": "NodeArch"
+        },
+        {
+          "number": "+84318464",
+          "holder": "Trufla"
+        }
+      ]
+    }
+  },
+
+  "schema": [
+    {
+      "push": {
+        "phones": {
+          "for": {"path": "@data.phones"},
+          "push": ["$elem.number"]
+        }
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "phones": ["+151564986", "+84318464"]
+    }
+  ]
+}

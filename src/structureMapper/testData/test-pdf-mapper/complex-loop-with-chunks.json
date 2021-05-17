@@ -1,0 +1,226 @@
+{
+  "source": {
+    "clientName": "nodearch",
+    "quoteId": "77",
+    "cars": [
+      {
+        "id": "1",
+        "model": "Jaguar",
+        "year": 2000,
+        "drivers": [
+          {
+            "id": "d1id1",
+            "name": "Test1"
+          }, {
+            "id": "d1id2",
+            "name": "Test2"
+          }
+        ],
+        "locations": [
+          {
+          "id": "l1"
+          },
+          {
+          "id": "l2"
+          }
+        ]
+      }, 
+      {
+        "id": "2",
+        "model": "BMW",
+        "year": 2012,
+        "drivers": [
+          {
+            "id": "d2id1",
+            "name": "Test12"
+          }, {
+            "id": "d2id2",
+            "name": "Test22"
+          }
+        ],
+        "locations": [
+          {
+          "id": "l3"
+          },
+          {
+          "id": "l4"
+          }
+        ]
+      }
+    ],
+  
+    "motorcycles": [
+      {
+        "id": "13",
+        "model": "Harvey",
+        "year": 2003,
+        "drivers": [
+          {
+            "id": "dtest11",
+            "name": "Test1"
+          }, {
+            "id": "dtest12",
+            "name": "Test2"
+          }
+        ],
+        "locations": [
+          {
+          "id": "5"
+          },
+          {
+          "id": "6"
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "model": "Halawa",
+        "year": 2013,
+        "drivers": [
+          {
+            "id": "dtest2",
+            "name": "Test2"
+          }, {
+            "id": "dtest22",
+            "name": "Test22"
+          }
+        ],
+        "locations": [
+          {
+          "id": "7"
+          },
+          {
+          "id": "8"
+          }
+        ]
+      }
+    ]
+  },
+
+  "schema": [
+    {
+      "for":{
+        "path": ["@cars", "@motorcycles"],
+        "count": 2
+      },
+      "push": {
+        "name": "@clientName",
+        "qId": "@quoteId",
+        "vehicles": {
+          "id1": "$elem[0].id",
+          "id2": "$elem[1].id",
+
+          "model1": "$elem[0].model",
+          "model2": "$elem[1].model",
+
+          "year1": "$elem[0].year",
+          "year2": "$elem[1].year",
+
+          "objectID": "@quoteId",
+          "newValue": 2,
+          "drivers": {
+            "for": {
+              "path": ["$elem[0].drivers", "$elem[1].drivers"],
+              "count": 3
+            },
+            "push":{
+              "v1d1": "$elem[0].id",
+              "parentID11": "$elem[0].$parent.id",
+              "v1d2": "$elem[1].id",
+              "parentID12": "$elem[1].$parent.id",
+              "v2d1": "$elem[2].id",
+              "parentID21": "$elem[2].$parent.id",
+              "v2d2": "$elem[3].id",
+              "parentID22": "$elem[3].$parent.id"
+            }
+          },
+          "ids":{
+            "for": {
+              "path": ["$elem[0].drivers", "$elem[0].locations", "$elem[1].drivers", "$elem[1].locations"]
+            },
+            "push": ["$elem.id"]
+          }
+        }
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "name": "nodearch",
+      "qId": "77",
+      "vehicles": {
+        "id1": "1",
+        "id2": "2",
+        "model1": "Jaguar",
+        "model2": "BMW",
+        "year1": 2000,
+        "year2": 2012,
+        "objectID": "77",
+        "newValue": 2,
+        "drivers": [
+          {
+            "v1d1": "d1id1",
+            "parentID11": "1",
+            "v1d2": "d1id2",
+            "parentID12": "1",
+            "v2d1": "d2id1",
+            "parentID21": "2"
+          },
+          {
+            "v1d1": "d2id2",
+            "parentID11": "2"
+          }
+        ],
+        "ids": [
+          "d1id1",
+          "d1id2",
+          "l1",
+          "l2",
+          "d2id1",
+          "d2id2",
+          "l3",
+          "l4"
+        ]
+      }
+    },
+    {
+      "name": "nodearch",
+      "qId": "77",
+      "vehicles": {
+        "id1": "13",
+        "id2": "14",
+        "model1": "Harvey",
+        "model2": "Halawa",
+        "year1": 2003,
+        "year2": 2013,
+        "objectID": "77",
+        "newValue": 2,
+        "drivers": [
+          {
+            "v1d1": "dtest11",
+            "parentID11": "13",
+            "v1d2": "dtest12",
+            "parentID12": "13",
+            "v2d1": "dtest2",
+            "parentID21": "14"
+          },
+          {
+            "v1d1": "dtest22",
+            "parentID11": "14"
+          }
+        ],
+        "ids": [
+          "dtest11",
+          "dtest12",
+          "5",
+          "6",
+          "dtest2",
+          "dtest22",
+          "7",
+          "8"
+        ]
+      }
+    }
+  ]
+}

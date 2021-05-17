@@ -1,0 +1,126 @@
+{
+  "source": {
+    "client": {
+      "firstName": "No",
+      "lastName": "Name",
+      "age": 1111,
+      "phone": "11111111",
+      "address": "1111 EErr"
+    },
+    "vehicles": [
+      {
+        "vin": "RRRRRRRRRRRRRR",
+        "make": "RRR",
+        "claims": [
+          {
+            "id": "a",
+            "name": "c111",
+            "codes": [
+              {
+                "code": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "vin": "ASdasdasdasd@3asda",
+        "make": "BMW",
+        "claims": [
+          {
+            "id": "c",
+            "name": "c112",
+            "codes": [
+              {
+                "code": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "vin": "AShjhHJyjytjytjtyjty",
+        "make": "Toyota",
+        "claims": [
+          {
+            "id": "e",
+            "name": "c113",
+            "codes": [
+              {
+                "code": 3
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "schema": [
+    {
+      "for": {
+        "path": "@vehicles.claims.codes",
+        "start": 0,
+        "count": 1
+      },
+      "push": {
+        "key": "9999-999-99",
+        "data": {
+          "vin": "$elem.$parent.$parent.vin",
+          "make": "$elem.$parent.$parent.make",
+          "claimName": "$elem.$parent.name",
+          "code": "$elem.code"
+        },
+        "pages": [1, 1]
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "key": "9999-999-99",
+      "data": {
+        "vin": "RRRRRRRRRRRRRR",
+        "make": "RRR",
+        "claimName": "c111",
+        "code": 1
+      },
+      "pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "key": "9999-999-99",
+      "data": {
+        "vin": "ASdasdasdasd@3asda",
+        "make": "BMW",
+        "claimName": "c112",
+        "code": 2
+      },
+      "pages": [
+        1,
+        1
+      ]
+    },
+    {
+      "key": "9999-999-99",
+      "data": {
+        "vin": "AShjhHJyjytjytjtyjty",
+        "make": "Toyota",
+        "claimName": "c113",
+        "code": 3
+      },
+      "pages": [
+        1,
+        1
+      ]
+    }
+  ]
+}
+
+
+
+
+ 
+
+

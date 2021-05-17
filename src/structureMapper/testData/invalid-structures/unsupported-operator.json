@@ -1,0 +1,33 @@
+{
+  "source": {
+    "client": {
+      "name": "nodearch",
+      "version": 1
+    }
+  },
+
+  "schema": [
+    {
+      "conditions": [
+        {
+          "unsupportedOperator": ["@client.name", "@client.version"]
+        }
+      ],
+      "push": {
+        "name": "@client.name",
+        "version": ["@client.name", "@client.version"]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "and": ["@client.name", "@client.version"]
+        }
+      ],
+      "push": {
+        "name": "@client.name",
+        "version": ["@client.name", "@client.version"]
+      }
+    }
+  ]
+}

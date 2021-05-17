@@ -1,0 +1,157 @@
+{
+  "source": {
+    "client": {
+      "firstName": "No",
+      "lastName": "Name",
+      "age": 1111,
+      "phone": "11111111",
+      "address": "1111 EErr"
+    },
+    "vehicles": [
+      {
+        "vin": "RRRRRRRRRRRRRR",
+        "make": "RRR",
+        "claims": [
+          {
+            "id": "a",
+            "name": "c111"
+          }, {
+            "id": "b",
+            "name": "c121"
+          }
+        ]
+      }
+    ]
+  },
+  
+  "schema": [
+    {
+      "push": {
+        "key": "pdf-key",
+        "data": {
+          "name": {
+            "conditions": [
+              {
+                "and": ["@client.firstName", "@vehicles[0].license"],
+                "value": "Mr. No Name - false"
+              },
+              {
+                "and": ["@client.firstName", "@client.lastName"],
+                "value": "Mr. No Name - cond"
+              }
+            ]
+          }
+        },
+        "pages": [1, 2]
+      }
+    },
+    {
+      "push": {
+        "key": "pdf-key",
+        "data": {
+          "name": {
+            "conditions": [
+              {
+                "and": ["@client.firstName", "@vehicles[0].license"],
+                "value": "Mr. No Name - false"
+              },
+              {
+                "default": true,
+                "value": "Mr. No Name - default"
+              }
+            ]
+          }
+        },
+        "pages": [1, 2]
+      }
+    },
+    {
+      "push": {
+        "key": "pdf-key",
+        "data": {
+          "name": {
+            "conditions": [
+              {
+                "and": ["@client.firstName", "@vehicles[0].license"],
+                "value": "Mr. No Name - false"
+              },
+              {
+                "and": ["@client.firstName", "@client.lastName"],
+                "value": {
+                  "prefix": "Mr. ",
+                  "first": "@client.firstName"
+                }
+              }
+            ]
+          }
+        },
+        "pages": [1, 2]
+      }
+    },
+    {
+      "push": {
+        "key": "pdf-key",
+        "data": {
+          "name": {
+            "conditions": [
+              {
+                "and": ["@client.firstName", "@vehicles[0].license"],
+                "value": "Mr. No Name - false"
+              },
+              {
+                "and": ["@client.firstName", "@client.lastName"],
+                "value": {
+                  "concat": [
+                    "Mr. ",
+                    "@client.firstName",
+                    " ",
+                    " - concated"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "pages": [1, 2]
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "key": "pdf-key",
+      "data": {
+        "name": "Mr. No Name - cond"
+      },
+      "pages": [1, 2]
+
+    },
+    {
+      "key": "pdf-key",
+      "data": {
+        "name": "Mr. No Name - default"
+      },
+      "pages": [1, 2]
+
+    },
+    {
+      "key": "pdf-key",
+      "data": {
+        "name": {
+          "prefix":"Mr. ",
+          "first": "No"
+        }
+      },
+      "pages": [1, 2]
+
+    },
+    {
+      "key": "pdf-key",
+      "data": {
+        "name": "Mr. No  - concated"
+      },
+      "pages": [1, 2]
+
+    }
+  ]
+}

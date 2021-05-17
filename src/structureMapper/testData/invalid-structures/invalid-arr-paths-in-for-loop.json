@@ -1,0 +1,23 @@
+{
+  "source": {
+    "vehicles": {
+      "vin": "1234560",
+      "claims": [
+        {
+          "claimName": "c1"
+        }
+      ]
+    }
+  },
+
+  "schema": [
+    {
+      "for": {
+        "path": "@notthere"
+      },
+      "push": {
+        "veh": "$elem.id"
+      }
+    }
+  ]
+}

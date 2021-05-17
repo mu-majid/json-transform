@@ -1,0 +1,24 @@
+{
+  "source": {
+
+  },
+
+  "schema": [
+    {
+      "push": {
+        "key": "pdf-key",
+        "data": {
+          "name": {
+            "conditions": [
+              {
+                "and": ["@client.firstName", "@vehicles[0].license"],
+                "value": "Mr. No Name - false"
+              }
+            ]
+          }
+        },
+        "pages": [1, 2]
+      }
+    }
+  ]
+}

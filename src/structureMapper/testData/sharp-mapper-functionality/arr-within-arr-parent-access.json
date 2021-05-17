@@ -1,0 +1,127 @@
+{
+  "source": {
+    "vehicles": [
+      {
+        "vin": 1,
+        "claims": [
+          {
+            "id": "c1"
+          }
+        ],
+        "anotherArr": [
+          {
+            "id":"another1"
+          }
+        ]
+      },
+      {
+        "vin": 2,
+        "claims": [
+          {
+            "id": "c2"
+          },
+          {
+            "id": "c7"
+          }
+        ],
+        "anotherArr": [
+          {
+            "id":"another2"
+          },
+          {
+            "id":"another22"
+          }
+        ]
+      },
+      {
+        "vin": 3,
+        "claims": [
+          {
+            "id": "c3"
+          }
+        ],
+        "anotherArr": [
+          {
+            "id":"another3"
+          }
+        ]
+      }
+    ]
+  },
+
+  "schema": [
+    {
+      "push": {
+        "vehsClaims": {
+          "for": {
+            "path":  "@vehicles.claims"
+          },
+          "push": {
+            "vin": "$elem.$parent.vin",
+            "id": "$elem.id",
+            "data": {
+              "for": {
+                "path": "$elem.$parent.anotherArr"
+              } ,
+              "push": {
+                "id": "$elem.id"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "vehsClaims": [
+        {
+          "vin": 1,
+          "id": "c1",
+          "data": [
+            {
+              "id": "another1"
+            }
+          ]
+        },
+        {
+          "vin": 2,
+          "id": "c2",
+
+          "data": [
+            {
+              "id": "another2"
+            },
+            {
+              "id": "another22"
+            }
+          ]
+        },
+        {
+          "vin": 2,
+          "id": "c7",
+
+          "data": [
+            {
+              "id": "another2"
+            },
+            {
+              "id": "another22"
+            }
+          ]
+        },
+        {
+          "vin": 3,
+          "id": "c3",
+
+          "data": [
+            {
+              "id": "another3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

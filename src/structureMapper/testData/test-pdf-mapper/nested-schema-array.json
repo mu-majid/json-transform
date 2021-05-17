@@ -1,0 +1,22 @@
+{
+  "source": {
+    "client": {
+      "name": "sharpone",
+      "framework": "nodearch"
+    }
+  },
+
+  "schema": [
+    {
+      "push": {
+        "name": ["@client.name", ["@client.name", "@client.framework"]]
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "name": ["sharpone", ["sharpone", "nodearch"]]
+    }
+  ]
+}

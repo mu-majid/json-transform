@@ -1,0 +1,14 @@
+{
+  "schema": [
+    {
+      "for": {
+        "path": "@vehicles"
+      },
+      "invalidKey": {
+        "data": {
+          "name": "NodeArch"
+        }
+      }
+    }
+  ]
+}

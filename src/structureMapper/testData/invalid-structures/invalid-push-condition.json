@@ -1,0 +1,17 @@
+{
+  "schema": [
+    {
+      "conditions": [
+        {
+          "or": ["@clientconsent", "@clientcredit"],
+          "value": "This should not be evalutaed, cuz this cond is for push"
+        }
+      ],
+      "push": {
+        "data": {
+          "name": "@clientName"
+        }
+      }
+    }
+  ]
+}

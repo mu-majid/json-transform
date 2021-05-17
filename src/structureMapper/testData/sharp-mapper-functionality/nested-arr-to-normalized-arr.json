@@ -1,0 +1,124 @@
+{
+  "source": {
+    "vehicles": [
+      {
+        "id": "1",
+        "name": "vehicle1",
+        "claims": [
+          {
+            "id": "a",
+            "name": "c11",
+            "motorV": null
+
+          }, {
+            "id": "b",
+            "name": "c12",
+            "motorV": null
+
+          }
+        ]
+      }, {
+        "id": "2",
+        "name": "vehicle2",
+        "claims": [
+          {
+            "id": "c",
+            "name": "c21",
+            "motorV": null
+
+          }, {
+            "id": "d",
+            "name": "c22",
+            "motorV": null
+
+          }
+        ]
+      }
+    ],
+  
+    "motorcycles": [{
+      "id": null,
+      "name": "motorcycle1",
+      "claims": [{
+        "id": "e",
+        "name": "c31",
+        "motorV": null
+      }]
+    }]
+  },
+
+  "schema": [
+    {
+      "push": {
+        "allClaims": {
+          "for": {
+            "path": ["@vehicles.claims", "@motorcycles.claims"]
+          },
+          "push": {
+            "id": "$elem.id",
+            "claimName": "$elem.name",
+            "parentID": "$elem.$parent.id",
+            "parentName": "$elem.$parent.name",
+            "motorV": "$elem.motorV"
+          }
+        },
+        "key": "fileKey",
+        "pages": [1, 2],
+        "vehOne": "@vehicles[0].id"
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "allClaims": [
+        {
+          "id": "a",
+          "claimName": "c11",
+          "parentID": "1",
+          "parentName": "vehicle1",
+          "motorV": null
+
+        }, {
+          "id": "b",
+          "claimName": "c12",
+          "parentID": "1",
+          "parentName": "vehicle1",
+          "motorV": null
+
+        }, {
+          "id": "c",
+          "claimName": "c21",
+          "parentID": "2",
+          "parentName": "vehicle2",
+          "motorV": null
+
+        }, {
+          "id": "d",
+          "claimName": "c22",
+          "parentID": "2",
+          "parentName": "vehicle2",
+          "motorV": null
+
+        }, {
+          "id": "e",
+          "claimName": "c31",
+          "parentID": null,
+          "motorV": null,
+          "parentName": "motorcycle1"
+        }
+      ],
+      "key": "fileKey",
+      "pages": [
+        1,
+        2
+      ],
+      "vehOne": "1"
+  
+    }
+  ]
+}
+
+
+
+

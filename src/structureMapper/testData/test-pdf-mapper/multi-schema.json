@@ -1,0 +1,49 @@
+{
+  "source": {
+    "client": {"age": 18, "iter": [1, 2]},
+    "clientName": "Majid"
+    
+  },
+
+  "schema": [
+    {
+    	"conditions": [ {"equal": ["@client.age", 18]} ],
+      "push": {
+        "ClientData": {
+          "name": "@clientName",
+          "adult": true
+        }
+      }
+    },
+    {
+    	"for": { "path": "@client.iter"},
+    	"push": {
+    		"clientData": {
+    			"name": "@clientName",
+    			"iter": "$elem"
+    		}
+    	}
+    }
+  ],
+
+  "output": [
+    {
+      "ClientData": {
+        "name": "Majid",
+        "adult": true
+      }
+    },
+    {
+      "clientData": {
+        "name": "Majid",
+        "iter": 1
+      }
+    },
+    {
+      "clientData": {
+        "name": "Majid",
+        "iter": 2
+      }
+    }
+  ]
+}

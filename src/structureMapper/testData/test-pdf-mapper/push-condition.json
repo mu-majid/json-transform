@@ -1,0 +1,57 @@
+{
+  "source":{
+    "client": {
+      "name": "Majid",
+      "consent": true
+    },
+    "vehicles":[
+      {
+        "id": "v1"
+      },
+      {
+        "id": "v2"
+      }
+    ]
+  },
+
+  "schema": [
+    {
+      "conditions": [
+        {
+          "exist": "@client.phone"
+        }
+      ],
+      "push": {
+        "key": "@client.name",
+        "data":{
+          "vehicle": "@vehicles[0].id"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "exist": "@client.address"
+        },
+        {
+          "equal": ["@client.consent", true]
+        }
+      ],
+      "push": {
+        "key": "@client.name",
+        "data":{
+          "vehicle": "@vehicles[0].id"
+        }
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "key": "Majid",
+      "data": {
+        "vehicle": "v1"
+      }
+    }
+  ]
+}

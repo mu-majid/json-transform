@@ -1,0 +1,63 @@
+{
+  "source": {
+    "client": {
+      "name":"NodeArch",
+      "version": "v1",
+      "team": "sharpone"
+    }
+  },
+
+  "schema": [
+    {
+      "push": {
+        "data": {
+          "name": {
+            "value": true
+          },
+          "name2": ["@client.name", "@client.version"],
+          "name3": {
+            "value": "@client.team"
+          },
+          "name4": {
+            "value": ["@client.name", " - ", "@client.team"]
+          },
+          "name5": {
+            "value": {
+              "concat": ["@client.name", " - ", "@client.team"]
+            }
+          },
+          "name6": "@client.version",
+          "name7": { "one": 1 },
+          "name8": {
+            "value": {
+              "two": 2
+            }
+          },
+          "name10": {
+            "value": 10
+          },
+          "name11": {
+            "value": "value11"
+          }
+        }
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "data": {
+        "name": true,
+        "name2": ["NodeArch", "v1"],
+        "name3": "sharpone",
+        "name4": ["NodeArch", " - ", "sharpone"],
+        "name5": "NodeArch - sharpone",
+        "name6": "v1",
+        "name7": { "one": 1 },
+        "name8": { "two": 2 },
+        "name10": 10,
+        "name11": "value11"
+      }
+    }
+  ]
+}

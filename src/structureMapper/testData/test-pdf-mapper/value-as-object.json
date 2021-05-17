@@ -1,0 +1,33 @@
+{
+  "source": {
+    "client": {
+      "name": "NodeArch",
+      "details": {
+        "firstName": "M",
+        "lastName": "K"
+      }
+    }
+  },
+
+  "schema": [
+    {
+      "push": {
+        "name": {
+          "value": {
+            "concat": [
+              "@client.details.firstName",
+              " ",
+              "@client.details.lastName"
+            ]
+          }
+        }
+      }
+    }
+  ],
+
+  "output": [
+    {
+      "name":"M K"
+    }
+  ]
+}

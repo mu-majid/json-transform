@@ -1,0 +1,69 @@
+{
+  "source": {
+    "vehs": [
+      {
+        "id": 1,
+        "claims": [
+          {
+            "cid": 1
+          },
+          {
+            "cid": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "vin": 55,
+        "claims": [
+          {
+            "cid": 3,
+            "name": "c3"
+          },
+          {
+            "cid": 4,
+            "name": "c4"
+          }
+        ]
+      }
+    ]
+  },
+  "schema": [
+    {"push": {
+      "data": {
+        "for": {
+          "path": ["@vehs.claims"]
+        },
+        "push": {
+          "cid": "$elem.cid",
+          "cname": "$elem.name",
+          "parentVin": "$elem.$parent.vin"
+        }
+      }
+    }}
+  ],
+
+  "output": [
+    {
+      "data": [
+        {
+          "cid": 1
+        },
+        {
+          "cid": 2
+        },
+        {
+          "cid": 3,
+          "parentVin": 55,
+          "cname": "c3"
+        },
+        {
+          "cid": 4,
+          "parentVin": 55,
+          "cname": "c4"
+
+        }
+      ]
+    }
+  ]
+}

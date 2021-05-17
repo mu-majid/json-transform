@@ -1,0 +1,188 @@
+{
+  "source": {
+    "client": {
+      "name": "NodeArch",
+      "version": 1,
+      "address": { "street": "trufla" }
+    },
+    "claims":[
+      {
+        "name": "c1",
+        "codes": [
+          {
+            "code": 1
+          },
+          {
+            "code": 2
+          }
+        ]
+      },
+      {
+        "name": "c2",
+        "codes": [
+          {
+            "code": 3
+          },
+          {
+            "code": 4
+          }
+        ]
+      }
+    ],
+    "motors":[
+      {
+        "name": "m1",
+        "codes": [
+          {
+            "code": 1
+          },
+          {
+            "code": 2
+          }
+        ]
+      },
+      {
+        "name": "m2",
+        "codes": [
+          {
+            "code": 3
+          },
+          {
+            "code": 4
+          }
+        ]
+      }
+    ]
+  },
+  
+  "schema": [
+    {
+      "conditions": [
+        {
+          "equal": ["@client.version", 1]
+        }
+      ],
+      "for": {
+        "path": ["@claims.codes", "@motors.codes"],
+        "count": 2
+      },
+      "push":{
+        "key": "filesKey",
+        "data": {
+          "clientname": "@client.name",
+          "street": "@client.address.street",
+          "allClaimsAndMotors": {
+            "code1": "$elem[0].code",
+            "code2": "$elem[1].code",
+            "name": "$elem.$parent.name",
+            "name1": "$elem[0].$parent.name",
+            "name2": "$elem[1].$parent.name"
+
+          },
+          "motors":[
+            {
+              "name": "@motors[0].name"
+            },
+            {
+              "name": "@motors[1].name"
+            }
+          ]
+        }
+      }
+    }
+  ],
+
+  "output": [
+    {
+     "key": "filesKey",
+     "data": {
+      "clientname": "NodeArch",
+      "street": "trufla",
+      "allClaimsAndMotors": {
+       "code1": 1,
+       "code2": 2,
+       "name": "c1",
+       "name1": "c1",
+       "name2": "c1"
+
+      },
+      "motors": [
+       {
+        "name": "m1"
+       },
+       {
+        "name": "m2"
+       }
+      ]
+     }
+    },
+    {
+     "key": "filesKey",
+     "data": {
+      "clientname": "NodeArch",
+      "street": "trufla",
+      "allClaimsAndMotors": {
+       "code1": 3,
+       "code2": 4,
+       "name": "c2",
+       "name1": "c2",
+       "name2": "c2"
+      },
+      "motors": [
+       {
+        "name": "m1"
+       },
+       {
+        "name": "m2"
+       }
+      ]
+     }
+    },
+    {
+     "key": "filesKey",
+     "data": {
+      "clientname": "NodeArch",
+      "street": "trufla",
+      "allClaimsAndMotors": {
+       "code1": 1,
+       "code2": 2,
+       "name": "m1",
+       "name1": "m1",
+       "name2": "m1"
+      },
+      "motors": [
+       {
+        "name": "m1"
+       },
+       {
+        "name": "m2"
+       }
+      ]
+     }
+    },
+    {
+     "key": "filesKey",
+     "data": {
+      "clientname": "NodeArch",
+      "street": "trufla",
+      "allClaimsAndMotors": {
+       "code1": 3,
+       "code2": 4,
+       "name": "m2",
+       "name1": "m2",
+       "name2": "m2"
+
+      },
+      "motors": [
+       {
+        "name": "m1"
+       },
+       {
+        "name": "m2"
+       }
+      ]
+     }
+    }
+   ]
+   
+}

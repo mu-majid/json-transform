@@ -1,0 +1,43 @@
+{
+  "name": "@nodearch/mapper",
+  "version": "0.0.1",
+  "description": "nodearch module for mapping json",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "nyc mocha",
+    "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
+    "release": "npm run build && npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodearch/mapper.git"
+  },
+  "keywords": [
+    "nodearch",
+    "nodearch-mapper"
+  ],
+  "author": "https://github.com/AhmedAli7O1",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nodearch/mapper/issues",
+    "email": "bluemax7o1@gmail.com"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.4",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.8",
+    "@types/sinon": "^7.5.0",
+    "@types/sinon-chai": "^3.2.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "sinon": "^7.4.1",
+    "sinon-chai": "^3.3.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2",
+    "@types/chai-as-promised": "^7.1.2",
+    "chai-as-promised": "^7.1.1"
+  }
+}
